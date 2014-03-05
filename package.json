@@ -1,0 +1,20 @@
+{
+	"name": "mustlayout",
+	"version": "0.0.1",
+	"description": "A layout and partials pre-compile tool for mustache-like template engine using in express.",
+	"main": "index.js",
+	"keywords": [
+		"mustache",
+		"layout",
+		"partial",
+		"pre-compile",
+		"express",
+		"template"
+	],
+	"author": "mytharcher",
+	"license": "MIT",
+	"dependencies": {
+		"glob": "3.x",
+		"mkdirp": "latest"
+	}
+}
