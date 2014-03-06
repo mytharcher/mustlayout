@@ -100,7 +100,6 @@ function cacheFilter (item) {
 
 exports.engine = function (app, config) {
 	var cachePath = join(approot, config.cache || join(config.views, 'cache'));
-	console.log();
 	var targetsPath = join(cachePath, 'targets');
 	if (!fs.existsSync(targetsPath)) {
 		console.log('Targets cache folder %s does not exist, try creating...', targetsPath);
@@ -118,6 +117,7 @@ exports.engine = function (app, config) {
 	};
 
 	// preparing partials
+	var partialsPath = join(approot, config.partials || config.views);
 	var RE = new RegExp('^' + escapeReg(partialsPath) + '/|\\' + options.ext + '$', 'g');
 	console.log('Reading partials path %s', partialsPath);
 	var partials = glob.sync(partialsPath + '/**/*' + options.ext).filter(cacheFilter, options);
