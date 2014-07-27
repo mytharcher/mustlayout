@@ -3,7 +3,7 @@ MustLayout
 
 [简体中文](http://mytharcher.github.io/posts/npm-mustlayout.html)
 
-This package is for express.js 3.0+ users who want to use layout and partial in mustache based ([mustache](http://mustache.github.io/), [hogan](https://github.com/twitter/hogan.js), [handlebars](http://handlebarsjs.com/)) template engines, with only a really simple configuration.
+This package is for express.js 3.0+ (4.0+ also supported) users who want to use layout and partial in mustache based ([mustache](http://mustache.github.io/), [hogan](https://github.com/twitter/hogan.js), [handlebars](http://handlebarsjs.com/)) template engines, with only a really simple configuration.
 
 A few features:
 
