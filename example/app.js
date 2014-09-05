@@ -14,7 +14,8 @@ mustlayout.engine(app, {
 	cache: 'views/cache'
 });
 
-
+// test for variable `locals`
+app.locals.year = 2014;
 
 app.get('/', function (req, res, next) {
 	res.render('index', {
