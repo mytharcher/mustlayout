@@ -11,7 +11,8 @@ mustlayout.engine(app, {
 	views: 'views',
 	layouts: 'views/layouts',
 	partials: 'views/partials',
-	cache: 'views/cache'
+	cache: 'views/cache',
+	verbose: true
 });
 
 // test for variable `locals`
