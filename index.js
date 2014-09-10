@@ -1,4 +1,4 @@
-var approot = process.env.PWD;
+var approot = process.cwd();
 
 var path = require('path');
 var join = path.join;
@@ -68,7 +68,7 @@ function extend(target, blocks, options) {
 }
 
 function resolve(tpl, options) {
-	var name = tpl.replace(join(approot, options.views, '/'), '');
+	var name = path.basename(tpl);
 	logger.info('Starting to process template', name);
 	// 顺便解决掉partials
 	var result = extend(tpl, {}, options).replace(/\{\{>\s*([^\}\s]+)\s*\}\}/g, function (matcher, partial) {
