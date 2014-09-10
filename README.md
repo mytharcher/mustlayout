@@ -32,7 +32,8 @@ require('mustlayout').engine(app, {
     views: '/views',
     partials: '/views/partials', // optional, default to '/views'
     layouts: '/views/layouts', // optional, default to '/views'
-    cache: '/views/cache' // optional, default to '/views/cache'
+    cache: '/views/cache', // optional, default to '/views/cache'
+    verbose: true // optional, default is false
 });
 
 app.get('/', function (req, res, next) {
