@@ -32,7 +32,7 @@ function extend(target, blocks, options) {
 		}
 		logger.info('Mapped layout file to %s', layout);
 
-		pieces = result.trim().split('{{:');
+		pieces = result.trim().split('{{+');
 		if (pieces.length > 1) {
 			pieces.shift();
 			pieces.forEach(function (block) {
@@ -48,7 +48,7 @@ function extend(target, blocks, options) {
 		result = extend(join(options.layouts, layout), blocks, options);
 	} else {
 		// 没有检测到layout，则认为是顶层，替换掉blocks
-		pieces = template.trim().split('{{:');
+		pieces = template.trim().split('{{+');
 		if (pieces.length > 1) {
 			result = pieces.shift() + pieces.map(function (block) {
 				var nameLength = block.indexOf('}}');

@@ -7,11 +7,11 @@
 <body>
 
 <div id="header">
-{{:header}}Just Header{{/header}}
+{{+header}}Just Header{{/header}}
 </div>
 
 <div id="main">
-{{:body}}Nothing{{/body}}
+{{+body}}Nothing{{/body}}
 </div>
 
 {{> footer }}

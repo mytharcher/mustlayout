@@ -26,8 +26,10 @@ app.get('/', function (req, res, next) {
 
 app.get('/about', function (req, res, next) {
 	res.render('about', {
-		mobile: '1894453273',
-		address: 'Street Shangdi 10#, District Haidian, Beijing'
+		contact: {
+			mobile: '1894453273',
+			address: 'Street Shangdi 10#, District Haidian, Beijing'
+		}
 	});
 });
 

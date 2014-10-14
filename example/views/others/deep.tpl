@@ -1,10 +1,10 @@
 {{!< page }}
 
-{{: header }}
+{{+ header }}
 <h1>Template in deep folder</h1>
 {{/ header }}
 
-{{: body }}
+{{+ body }}
 <h2>Supporting:</h2>
 <ul>
 {{#list}}

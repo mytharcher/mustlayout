@@ -51,16 +51,16 @@ For more infomation just look into the example folder.
 
 MustLayout use handlebars' syntax `{{!<layoutName}}` for layout definition in a template file. Ordinarily, you should place this line at the beginning of your template file.
 
-Then use `{{:blockName}}...{{/blockName}}` to define a extensible layout block like in Smarty.
+Then use `{{+blockName}}...{{/blockName}}` to define a extensible layout block like in Smarty.
 
 An example for template `index.tpl` which extended layout `page.tpl`:
 
     {{!<page}}
-    {{:header}}
+    {{+header}}
     <h1>My Title</h1>
     {{/header}}
 
-    {{:body}}
+    {{+body}}
     ...
     {{/body}}
 
@@ -73,10 +73,10 @@ And in layout `page.tpl`:
     </head>
     <body>
     <div id="header">
-    {{:header}}Just Header{{/header}}
+    {{+header}}Just Header{{/header}}
     </div>
     <div id="main">
-    {{:body}}Nothing{{/body}}
+    {{+body}}Nothing{{/body}}
     </div>
     {{> footer }}
     </body>

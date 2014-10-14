@@ -1,9 +1,9 @@
 {{!< page }}
 
-{{: header }}
+{{+ header }}
 <h1>{{ title }}</h1>
 {{/ header }}
 
-{{: body }}
+{{+ body }}
 <p>Extended layout with blocks.</p>
 {{/ body }}
