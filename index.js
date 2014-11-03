@@ -121,7 +121,7 @@ exports.engine = function (app, config) {
 	};
 
 	// preparing partials
-	var partialsPath = join(approot, config.partials || config.views);
+	var partialsPath = join(approot, config.partials || config.views).replace(/\\/g, '/');
 	var RE = new RegExp('^' + escapeReg(partialsPath) + '/|\\' + options.ext + '$', 'g');
 	logger.info('Reading partials path %s', partialsPath);
 	var partials = glob.sync(partialsPath + '/**/*' + options.ext).filter(cacheFilter, options);
