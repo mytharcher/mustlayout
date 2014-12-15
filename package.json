@@ -1,6 +1,6 @@
 {
 	"name": "mustlayout",
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"description": "A layout and partials pre-compile tool for mustache based template engine using in express.",
 	"main": "index.js",
 	"keywords": [
