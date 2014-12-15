@@ -71,7 +71,7 @@ function resolve(tpl, options) {
 	function partialReplacer(matcher, partial) {
 		var ret = '<!-- Warning: partial "' + partial + '" file is not exist. -->';
 		if (~partial.lastIndexOf(options.ext)) {
-			partial = partial.substring(0, -options.ext.length);
+			partial = partial.substring(0, partial.length - options.ext.length);
 		}
 		var file = options.partials[partial];
 		if (file) {
