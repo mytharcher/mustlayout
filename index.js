@@ -68,10 +68,7 @@ function extend(target, blocks, options) {
 }
 
 function resolve(tpl, options) {
-	var name = path.basename(tpl);
-	logger.info('Starting to process template', name);
-	// 顺便解决掉partials
-	var result = extend(tpl, {}, options).replace(/\{\{>\s*([^\}\s]+)\s*\}\}/g, function (matcher, partial) {
+	function partialReplacer(matcher, partial) {
 		var ret = '<!-- Warning: partial "' + partial + '" file is not exist. -->';
 		if (~partial.lastIndexOf(options.ext)) {
 			partial = partial.substring(0, -options.ext.length);
@@ -81,7 +78,16 @@ function resolve(tpl, options) {
 			ret = fs.readFileSync(file, {encoding: options.encoding});
 		}
 		return ret;
-	});
+	}
+
+	var name = path.basename(tpl);
+	logger.info('Starting to process template', name);
+	// 顺便解决掉partials
+	var partialRe = /\{\{>\s*([^\}\s]+)\s*\}\}/;
+	var result = extend(tpl, {}, options);
+	while(partialRe.test(result)) {
+		result = result.replace(partialRe, partialReplacer);
+	}
 
 	// 替换结果缓存到`/views/cache/targets`目录，文件名中路径层级`/`替换为`-`
 	var targetFile = join(options.cache, name);
